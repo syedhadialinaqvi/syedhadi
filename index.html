@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome | Syed Hadi Ali</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 18px;
+      border: 1px solid hotpink;
+      border-radius: 30px;
+      color: hotpink;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      box-shadow: 0 0 15px rgba(255,105,180,0.4);
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    h1 span {
+      color: hotpink;
+      text-shadow: 0 0 25px rgba(255,105,180,0.7);
+    }
+
+    .typing {
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin-bottom: 40px;
+      min-height: 40px;
+      color: #ddd;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 105, 180, 0.25);
+      border-radius: 18px;
+      padding: 35px 25px;
+      transition: 0.4s ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 0 40px rgba(255,105,180,0.45);
+      border-color: hotpink;
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: hotpink;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, hotpink, #ff2f92);
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .card a:hover {
+      box-shadow: 0 0 25px rgba(255,105,180,0.8);
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .typing {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="badge">WELCOME</div>
+
+    <h1>Hi, I'm <span>Syed Hadi Ali</span></h1>
+    <div class="typing" id="typing"></div>
+
+    <div class="cards">
+      <div class="card">
+        <h2>CLI Portfolio</h2>
+        <p>A terminal-style interactive portfolio for developers who love commands, logic, and minimalism.</p>
+        <a href="./pages/cli.html">Enter CLI</a>
+      </div>
+
+      <div class="card">
+        <h2>GUI Portfolio</h2>
+        <p>A modern graphical portfolio with animations, projects showcase, and responsive UI.</p>
+        <a href="./pages/gui_resume.html">Enter GUI</a>
+      </div>
+    </div>
+
+    <footer>
+      © 2025 · Designed in Black & Hotpink
+    </footer>
+  </div>
+
+  <script>
+    const texts = [
+      "Full Stack Web Developer",
+      "BS Artificial Intelligence Student",
+      "Problem Solver & Tech Enthusiast",
+      "Welcome to My Portfolio"
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+    const typingElement = document.getElementById('typing');
+    const speed = 80;
+    const delay = 1500;
+
+    function typeText() {
+      if (charIndex < texts[index].length) {
+        typingElement.textContent += texts[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, speed);
+      } else {
+        setTimeout(eraseText, delay);
+      }
+    }
+
+    function eraseText() {
+      if (charIndex > 0) {
+        typingElement.textContent = texts[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseText, speed / 2);
+      } else {
+        index = (index + 1) % texts.length;
+        setTimeout(typeText, 500);
+      }
+    }
+
+    typeText();
+  </script>
+
+</body>
+</html>
