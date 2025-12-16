@@ -42,7 +42,7 @@ function loadingAnimation(text, finalCallback) {
 function showImage() {
   loadingAnimation('Loading image', () => {
     output.innerHTML = `
-      <img src="file:///C:/Users/hp/Desktop/ICT_PROJECT/img/hadi.png" 
+      <img src="../img/hadi.png" 
            alt="MyPic" 
            style="width:200px; border-radius:10px; box-shadow:0 0 10px #000;">
     `;
@@ -77,3 +77,4 @@ input.addEventListener('keydown', function(e) {
     input.value = '';
   }
 });
+
