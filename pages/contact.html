@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Syed Hadi Ali</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --bg:#0b0b0d;
+  --card:#141418;
+  --text:#ffffff;
+  --muted:#a0a0a0;
+  --accent:hotpink;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:radial-gradient(circle at right,#1b1205,var(--bg));
+  color:var(--text);
+}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:24px 8%;
+}
+
+.logo{font-size:20px;font-weight:600}
+.logo span{color:var(--accent)}
+
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  margin:0 14px;
+  font-size:14px;
+}
+
+.btn{
+  background:linear-gradient(135deg,rgb(230,15,123),hotpink);
+  padding:10px 22px;
+  border-radius:24px;
+  color:#000;
+  text-decoration:none;
+  font-weight:500;
+  transition:1s;
+}
+
+.btn:hover{
+  background:white;
+  color:hotpink;
+  transform:scale(1.1);
+}
+.contact{
+  padding:80px 8%;
+}
+
+.contact-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.contact-visual{
+  display:flex;
+  justify-content:center;
+}
+
+.contact-visual img{
+  max-width:420px;
+  width:100%;
+  border-radius:20px;
+  box-shadow:0 0 50px rgba(255,105,180,.25);
+}
+
+.contact-card{
+  background:var(--card);
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 0 40px rgba(255,105,180,.15);
+}
+
+.contact-card h2{
+  font-size:32px;
+  margin-bottom:10px;
+  text-align:center;
+}
+
+.contact-card h2 span{color:var(--accent)}
+
+.contact-card p{
+  text-align:center;
+  color:var(--muted);
+  margin-bottom:30px;
+  font-size:14px;
+}
+
+.contact-card form{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.contact-card input,
+.contact-card textarea{
+  background:#1b1b1f;
+  border:1px solid #222;
+  padding:14px;
+  color:#fff;
+  border-radius:12px;
+  font-size:14px;
+}
+
+.contact-card textarea{
+  resize:none;
+  height:120px;
+}
+
+.contact-card button{
+  background:linear-gradient(135deg,#f47cc4,hotpink);
+  border:none;
+  padding:14px;
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.contact-card button:hover{
+  background:white;
+  color:hotpink;
+}
+@media(max-width:900px){
+  .contact-wrapper{
+    grid-template-columns:1fr;
+  }
+  .contact-visual{
+    order:-1;
+  }
+}
+
+@media(max-width:768px){
+  header{
+    flex-direction:column;
+    gap:16px;
+  }
+  nav{display:none}
+  .contact-card{padding:30px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Syed<span>Hadi</span>Ali</div>
+  <nav>
+    <a href="./gui_resume.html">Home</a>
+    <a href="./gui_resume.html#projects">Projects</a>
+  </nav>
+  <a href="./cli.html" class="btn">CLI</a>
+</header>
+
+<section class="contact">
+  <div class="contact-wrapper">
+    <div class="contact-visual">
+      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExenc4MzZqczlpcjVvM2prNTUwdm5uaWN3am01YTFodXM0cDFlMjNteCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KpOqvmCFdNMhF0pQb7/giphy.gif" alt="Contact Animation">
+    </div>
+    <div class="contact-card">
+      <h2>Contact <span>Me</span></h2>
+      <p>Let’s build something meaningful together</p>
+      <form 
+        action="https://docs.google.com/forms/d/e/FORM_ID/formResponse"
+        method="POST"
+        target="_blank">
+
+        <input type="text" name="entry.123456" placeholder="Your Name" required>
+        <input type="email" name="entry.234567" placeholder="Your Email" required>
+        <textarea name="entry.345678" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+</body>
+</html>
